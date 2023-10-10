@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tip Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="container">
+        <h2>Ankit's Tip Calculator</h2>
+        <div class="mainDiv">
+            <div class="billDeails">
+                <h4>How Much Is Your Bill?</h4>
+                <h4 class="rupee">
+                    Rs &nbsp;
+                    <input type="number" class="billvalue" name="billTag" step="0.01">
+                    <span class="warning" id="billWarning">Please enter a valid bill amount.</span>
+                </h4>
+            </div>
+
+            <div class="selectService">
+                <h4>How Was Your Service?</h4>
+                <select name="services" id="serviceOption">
+                    <option value="default">--Choose your Service--</option>
+                    <option value="30">30%</option>
+                    <option value="20">20%</option>
+                    <option value="15">15%</option>
+                    <option value="10">10%</option>
+                    <option value="5">5%</option>
+                </select>
+                <span class="warning" id="serviceWarning">Please select a service rating.</span>
+            </div>
+
+            <div class="sharingBill">
+                <h4>How Many People Are Sharing Your Bill?</h4>
+                <h4 class="peopleDisplay">
+                    <input type="number" class="sharingPeople" id="peopleSplit" step="1">
+                    &nbsp;&nbsp; people
+                    <span class="warning" id="peopleWarning">Please enter the number of people.</span>
+                </h4>
+            </div>
+
+            <div class="currency">
+                <h4>Select Currency:</h4>
+                <select id="currencyOption">
+                    <option value="default">--Choose your Currency--</option>
+                    <option value="INR">Indian Rupees (INR)</option>
+                    <option value="USD">US Dollars (USD)</option>
+                    <option value="EUR">Euros (EUR)</option>
+                </select>
+                <span class="warning" id="currencyWarning">Please Select a currency.</span>
+            </div>
+            
+        </div>
+        <button class="calculate" disabled>Calculate</button>
+
+        <!-- Results container -->
+        <!-- Add a span to display the selected currency -->
+        <div class="results" hidden>
+            <div class="tipDisplay">
+                <h3>Tip Amount</h3>
+                <h4><span id="selectedCurrency"></span> <span id="tipAmount">0.00</span></h4>
+            </div>
+        </div>
+    </header>
+    <script src="script.js"></script>
+</body>
+</html>
